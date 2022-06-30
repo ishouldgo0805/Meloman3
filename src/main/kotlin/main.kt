@@ -1,6 +1,6 @@
 var purchaseSum = 1000
 
-var regularCustomer  = true
+var regularCustomer = true
 
 fun main() {
 
