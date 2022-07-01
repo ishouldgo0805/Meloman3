@@ -1,16 +1,10 @@
-var purchaseSum = 1000
+var purchaseSum = 10001
 
 var regularCustomer = true
 
 fun main() {
 
-    if (regularCustomer) {
-        var purchaseDiscount = (purchaseSum - discountAmount())
-        var afterDiscount = purchaseDiscount - (purchaseDiscount * 0.01)
-        println("Сумма покупки с учётом скидок: $afterDiscount")
-    } else {
-        println("Сумма покупки: $purchaseSum")
-    }
+    println("Сумма покупок с учётом сех скидок: ${sumAfterDiscount()} ")
 }
 
 fun discountAmount(): Double {
@@ -20,5 +14,14 @@ fun discountAmount(): Double {
         return 100.00
     } else {
         return purchaseSum * 0.05
+    }
+}
+
+fun sumAfterDiscount(): Double {
+    if (regularCustomer) {
+        var purchaseDiscount = (purchaseSum - discountAmount())
+        return purchaseDiscount - (purchaseDiscount * 0.01)
+    } else {
+        return purchaseSum - discountAmount()
     }
 }
